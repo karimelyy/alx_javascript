@@ -1,8 +1,8 @@
 class Rectangle {
   constructor(w, h) {
-    // Check for valid input and provide default values if necessary
-    this.width = (w > 0) ? w : 1;
-    this.height = (h > 0) ? h : 1;
+    // Set width and height to positive values
+    this.width = Math.max(1, w || 1);
+    this.height = Math.max(1, h || 1);
   }
 }
 
