@@ -1,0 +1,1 @@
+Welcome to the JavaScript Warm-Up Projects repository! This collection of projects is designed to help you get familiar with JavaScript basics. Each project is intended to cover fundamental concepts, allowing you to strengthen your understanding of the language.
