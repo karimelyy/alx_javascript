@@ -1,3 +1,5 @@
+#!/usr/bin/node
+
 class Rectangle {
   constructor(w, h) {
     // Check for positive integers or set default values
