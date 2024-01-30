@@ -1,0 +1,1 @@
+Welcome to the JavaScript Objects, Scopes, Closures Projects repository! This collection of projects is designed to enhance your understanding of JavaScript concepts related to objects, scopes, and closures. Each project focuses on specific aspects, allowing you to practice and deepen your knowledge.
