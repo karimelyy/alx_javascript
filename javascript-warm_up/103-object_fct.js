@@ -4,8 +4,8 @@ const myObject = {
   value: 12
 };
 
-// Add the incr function to myObject
-myObject.incr = function() {
+// Add the named incr function to myObject
+myObject.incr = function incr() {
   this.value++;
 };
 
