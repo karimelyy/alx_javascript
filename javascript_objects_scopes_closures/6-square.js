@@ -1,8 +1,8 @@
-const Square = require('./5-square');
+const BaseSquare = require('./5-square');
 
-class Square extends Square {
+class Square extends BaseSquare {
   constructor(size) {
-    // Call the constructor of the parent class (Square) using super()
+    // Call the constructor of the parent class (BaseSquare) using super()
     super(size);
   }
 
