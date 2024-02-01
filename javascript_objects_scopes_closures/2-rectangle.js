@@ -1,15 +1,12 @@
-#!/usr/bin/node
-
 class Rectangle {
   constructor(w, h) {
-    if (w > 0 && h > 0) {
-      this.width = w;
-      this.height = h;
-    } else {
-      // Set default values for invalid inputs
-      this.width = undefined;
-      this.height = undefined;
+    if (w <= 0 || h <= 0 || isNaN(w) || isNaN(h)) {
+      // If w or h is equal to 0 or not a positive integer, create an empty object
+      return {};
     }
+
+    this.width = w;
+    this.height = h;
   }
 }
 
