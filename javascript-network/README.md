@@ -1,0 +1,1 @@
+This project is a JavaScript-based network application that allows users to perform various networking tasks. It is designed to be flexible, extensible, and easy to use.
