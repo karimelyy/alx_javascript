@@ -20,5 +20,8 @@ request.get(url, (error, response, body) => {
   fs.writeFileSync(filePath, body, 'utf-8');
 
   console.log(`Content from ${url} has been saved to ${filePath}`);
-  console.log(body); // Print the content to match the expected output
+  console.log(body); // Print the content to the console
+
+  // If you want to see a clean line break between outputs
+  console.log('\n');
 });
