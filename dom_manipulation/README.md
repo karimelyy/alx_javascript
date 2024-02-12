@@ -1,0 +1,1 @@
+This project demonstrates various concepts of DOM (Document Object Model) manipulation using JavaScript. It includes examples of selecting, creating, appending, modifying, and removing HTML elements dynamically within a web page.

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to the website</title>
+    <style>
+        .title{
+            color: black;
+            font-family:'Times New Roman', Times, serif;
+            font-size: 45px;
+        }
+
+        input{
+            padding: 7px;
+            font-size: 16px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            border: 1px solid rgb(207, 207, 207);
+            border-radius: 3px;
+            margin-right: 3px;
+        }
+
+        button{
+            font-size: 16px;
+            padding: 4px 9px;
+            border: 1px solid rgb(207, 207, 207);
+            border-radius: 5px;
+            background-color: white;
+            cursor: pointer;
+            transition: background-color 0.15s;
+        }
+
+        button:hover{
+            background-color: rgb(179, 179, 179);
+        }
+
+        button:active{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Login to the website</h1>
+    <label for="firstname"></label>
+    <input type="text" id="firstname" placeholder="Firstname">
+    <label for="email"></label>
+    <input type="text" id="email" placeholder="Email">
+    <button onclick="setCookies()">Log me in</button>
+    <br>
+    <h1 class="title">Cookies</h1>
+    <button onclick="showCookies()">Show the cookies</button>
+    <br>
+    <div id="cookies"></div>
+    <script>
+    function setCookies() {
+      const firstname = document.getElementById('firstname').value;
+      const email = document.getElementById('email').value;
+
+      document.cookie = `firstname=${firstname};`;
+      document.cookie = `email=${email};`;
+    }
+
+    function showCookies() {
+      const cookiesParagraph = document.createElement('p');
+      cookiesParagraph.innerHTML = `Cookies: ${document.cookie}`;
+      document.body.appendChild(cookiesParagraph);
+    }
+  </script>
+</body>
+</html>
