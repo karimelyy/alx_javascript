@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login to the website</title>
-    <style>
-        .title{
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Management</title>
+  <style>
+
+    h1{
             color: black;
             font-family:'Times New Roman', Times, serif;
             font-size: 45px;
         }
 
-        input{
+    input{
             padding: 7px;
             font-size: 16px;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -37,32 +38,47 @@
         button:active{
             background-color: white;
         }
-    </style>
+
+    #cookiesContainer {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <h1 class="title">Login to the website</h1>
-    <label for="firstname"></label>
-    <input type="text" id="firstname" placeholder="Firstname">
-    <label for="email"></label>
-    <input type="text" id="email" placeholder="Email">
-    <button onclick="setCookies()">Log me in</button>
-    <br>
-    <h1 class="title">Cookies</h1>
-    <button onclick="showCookies()">Show the cookies</button>
+  <h1>Login to the website</h1>
+  <input type="text" id="firstname" placeholder="First Name">
+  <input type="text" id="email" placeholder="Email">
+  <button onclick="setCookies()">Log me in</button>
+  <br>
+  <h1>Cookies</h1>
+  <button onclick="showCookies()">Show the cookies</button>
 
-    <script>
+  <div id="cookiesContainer"></div>
+
+  <script>
     function setCookies() {
       const firstname = document.getElementById('firstname').value;
       const email = document.getElementById('email').value;
-
-      document.cookie = `firstname=${firstname};`;
-      document.cookie = `email=${email};`;
+      
+      document.cookie = `firstname=${firstname}`;
+      document.cookie = `email=${email}`;
     }
 
     function showCookies() {
+      const cookiesContainer = document.getElementById('cookiesContainer');
       const cookiesParagraph = document.createElement('p');
-      cookiesParagraph.innerHTML = `Cookies: ${document.cookie}`;
-      document.body.appendChild(cookiesParagraph);
+
+      const cookies = document.cookie.split(';');
+      let cookiesText = 'Cookies: ';
+      for (let cookie of cookies) {
+        const [name, value] = cookie.trim().split('=');
+        cookiesText += `${name}: ${value}, `;
+      }
+      cookiesText = cookiesText.slice(0, -2); // Remove the trailing comma and space
+
+      cookiesParagraph.textContent = cookiesText;
+      cookiesContainer.innerHTML = ''; // Clear previous content
+      cookiesContainer.appendChild(cookiesParagraph);
     }
   </script>
 </body>
